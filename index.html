@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ruta - Renault Sandero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8E_ZRHgvkxT5ITk9ql2aU23h3sv8EYJ4&libraries=places,routes&language=es"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Calculadora de Ruta</h1>
+            <p>Planifica tu viaje</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="car-info">
+            <div class="car-icon">
+                  <img src="sandero.png" alt="Renault Sandero" width="300" height="300">
+                </svg>
+            </div>
+            <div class="car-details">
+                <h3>Renault Sandero 2010</h3>
+                <p>Consumo: 10 km/l • Telepeaje: $152 • Combustible: $78/l</p>
+            </div>
+        </div>
+        
+        <div class="calculator-card">
+            <div class="form-group">
+                <label for="origin">Origen:</label>
+                <input type="text" id="origin" class="input-control" placeholder="Introduce tu ubicación de partida">
+            </div>
+            
+            <div class="form-group">
+                <label for="destination">Destino:</label>
+                <input type="text" id="destination" class="input-control" placeholder="Introduce tu ubicación de destino">
+            </div>
+            
+            <button id="calculateTrip" class="btn">Calcular Ruta</button>
+        </div>
+        
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        
+        <div id="results" class="hidden">
+            <div class="results-container">
+                <div class="result-card">
+                    <h3>Distancia</h3>
+                    <p id="distance">0 km</p>
+                    <small>Total del recorrido</small>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Tiempo estimado</h3>
+                    <p id="duration">0 min</p>
+                    <small>Tiempo del viaje</small>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Combustible requerido</h3>
+                    <p id="fuel">0 l</p>
+                    <small>10 km/l de consumo</small>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Costo combustible</h3>
+                    <p id="fuel-cost">$0</p>
+                    <small>$78 por litro</small>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Cantidad peajes</h3>
+                    <h5>(±1 si coexisten peajes en la misma carretera)</h5>
+                    <p id="toll-count">0</p>
+                    <small>$152 por telepeaje</small>
+                    
+                </div>
+
+                <div class="result-card">
+                    <h3>Costo peajes</h3>
+                    <p id="toll-cost">$0</p>
+                    <small>$152 por telepeaje</small>
+                </div>
+                
+                <div class="result-card">
+                    <h3>Costo total</h3>
+                    <p id="total-cost">$0</p>
+                    <small>Combustible + peajes</small>
+                </div>
+            </div>
+                    <br>
+        <button id="calculateRoundTrip" class="btn">Ida y vuelta</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
